@@ -22,14 +22,18 @@ theme_reach <- function() {
 
 
 ### RANKINGS WERE FUCKED UP; FIX THEM !!!
-G <- read_csv("Final_QB_MVP.csv") %>% arrange(season, -MVP)
-D <- G %>% group_by(season) %>%
-           mutate(tot_td_rank = rank(-tot_tds),
-                  tot_yard_rank = rank(-tot_yards),
-                  win_rank = rank(-wins),
-                  epa_rank = rank(-epa_play),
-                  cpoe_rank = rank(-avg_cpoe)) %>%
-           ungroup()
+# G <- read_csv("Final_QB_MVP.csv") %>% arrange(season, -MVP)
+# D <- G %>% group_by(season) %>%
+#            mutate(tot_td_rank = rank(-tot_tds),
+#                   tot_yard_rank = rank(-tot_yards),
+#                   win_rank = rank(-wins),
+#                   epa_rank = rank(-epa_play),
+#                   cpoe_rank = rank(-avg_cpoe)) %>%
+#            ungroup()
+# write_csv(D,"Final_QB_MVP.csv")
+
+D <- read_csv("Final_QB_MVP.csv") %>% arrange(season, -MVP)
+
 
 # check
 # D %>% filter(season==2020) %>% select(season, passer_player_name, wins, win_rank) %>% arrange(win_rank)
