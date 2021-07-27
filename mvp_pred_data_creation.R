@@ -132,7 +132,7 @@ final_qb_mvp$Position <- NULL
 #creating csv
 write.csv(final_qb_mvp,"Final_QB_MVP.csv", row.names = FALSE)
 
-### RANKINGS WERE FUCKED UP; FIX THEM !!!
+### FIX THE RANKINGS !!!
 G <- read_csv("Final_QB_MVP.csv") %>% arrange(season, -MVP)
 D <- G %>% group_by(season) %>%
   mutate(tot_td_rank = rank(-tot_tds),

@@ -21,7 +21,7 @@ theme_reach <- function() {
 # E %>% mutate(wr = rank(-wins)) %>% arrange(wr)
 
 
-### RANKINGS WERE FUCKED UP; FIX THEM !!!
+### FIX THE RANKINGS !!!
 # G <- read_csv("Final_QB_MVP.csv") %>% arrange(season, -MVP)
 # D <- G %>% group_by(season) %>%
 #            mutate(tot_td_rank = rank(-tot_tds),
@@ -106,7 +106,7 @@ v4 = D1 %>% filter(s == 2015) %>% filter(row_number() <= 5)
 v5 = D2 %>% filter(s == 2020) %>% filter(row_number() <= 5)
 
 
-v1 %>% gt() %>%
+v2 %>% gt() %>%
   data_color(
     columns = mvp_prob,
     colors = scales::col_numeric(
